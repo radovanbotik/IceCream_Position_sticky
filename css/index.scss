@@ -74,8 +74,8 @@ body {
     .control {
       background-color: fuchsia;
       display: flex;
-      position: sticky;
-      top: 0;
+      // position: sticky;
+      // top: 0;
 
       & > * {
         flex: 1;

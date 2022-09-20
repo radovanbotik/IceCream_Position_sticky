@@ -27,9 +27,6 @@ body section {
 body section.overflow .control {
   background-color: fuchsia;
   display: flex;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
 }
 body section.overflow .control > * {
   flex: 1;
