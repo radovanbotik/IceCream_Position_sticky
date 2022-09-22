@@ -101,19 +101,11 @@ body {
     grid-column: 2/3;
   }
   section.overflow {
-    // position: sticky;
-    // top: 0;
-    // margin-top: 8ex;
-
     .control {
       background-color: white;
-      // display: flex;
-
       display: grid;
       grid-auto-flow: column;
-      // grid-template-columns: 1fr;
-      // position: sticky;
-      // top: 0;
+      position: relative;
 
       & > * {
         flex: 1;
@@ -126,13 +118,11 @@ body {
 
         display: grid;
         place-items: center;
+
         .grid-control {
           width: 100%;
           display: grid;
           grid-template-columns: 2vw 1fr 2vw;
-          // grid-auto-rows: 1fr;
-          // column-gap: useSize(lg);
-          // row-gap: useSize(xl);
           column-gap: clamp(0px, useSize(lg), useSize(xl));
           row-gap: clamp(0px, useSize(lg), useSize(xl));
 
@@ -257,11 +247,53 @@ body {
           padding: 4ex;
           height: 100vh;
           width: 100%;
-          // display: block;
           position: relative;
           transition: all 250ms ease-in;
           display: grid;
           place-items: center;
+
+          .star {
+            width: 50%;
+            height: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            z-index: 2;
+            // fill: rgba(0, 0, 0, 0.027);
+
+            path:nth-child(1) {
+              animation: move 2s forwards;
+
+              @keyframes move {
+                0% {
+                  transform: translateY(0px) translateX(0px);
+                  stroke: white;
+                }
+                25% {
+                  transform: translateY(40px) translateX(-5px) scale(0.9);
+                  stroke: #b1a1f000;
+                  // fill: rgba(255, 255, 255, 0.058);
+                }
+                50% {
+                  transform: translateY(0px) translateX(-2px);
+                  stroke: #8c08e400;
+                  fill: transparent;
+                }
+                75% {
+                  transform: translateY(-2px) translateX(5px) scale(0.2);
+                  stroke: #ff405d00;
+                }
+                100% {
+                  transform: translateY(0px) translateX(0px);
+                  stroke: white;
+                }
+              }
+            }
+            path:nth-child(3) {
+              stroke: transparent;
+            }
+          }
 
           img {
             border-radius: 8px;
