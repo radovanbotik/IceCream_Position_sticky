@@ -12,11 +12,11 @@ const recipes = [
       },
       {
         ingredient: "milk",
-        image: "./assets/images/ingredients/milk.jpg",
+        image: "./assets/images/ingredients/milk.png",
       },
       {
-        ingredient: "sugar",
-        image: "./assets/images/ingredients/sugar.jpg",
+        ingredient: "honey",
+        image: "./assets/images/ingredients/honey.png",
       },
       {
         ingredient: "eggs",
@@ -37,11 +37,11 @@ const recipes = [
       },
       {
         ingredient: "milk",
-        image: "./assets/images/ingredients/milk.jpg",
+        image: "./assets/images/ingredients/milk.png",
       },
       {
-        ingredient: "sugar",
-        image: "./assets/images/ingredients/sugar.jpg",
+        ingredient: "honey",
+        image: "./assets/images/ingredients/honey.png",
       },
       {
         ingredient: "eggs",
@@ -62,7 +62,7 @@ const recipes = [
       },
       {
         ingredient: "milk",
-        image: "./assets/images/ingredients/milk.jpg",
+        image: "./assets/images/ingredients/milk.png",
       },
       {
         ingredient: "sugar",
@@ -87,11 +87,11 @@ const recipes = [
       },
       {
         ingredient: "milk",
-        image: "./assets/images/ingredients/milk.jpg",
+        image: "./assets/images/ingredients/milk.png",
       },
       {
-        ingredient: "sugar",
-        image: "./assets/images/ingredients/sugar.jpg",
+        ingredient: "honey",
+        image: "./assets/images/ingredients/honey.png",
       },
       {
         ingredient: "eggs",
@@ -120,7 +120,7 @@ const recipes = [
       },
       {
         ingredient: "milk",
-        image: "./assets/images/ingredients/milk.jpg",
+        image: "./assets/images/ingredients/milk.png",
       },
     ],
   },
