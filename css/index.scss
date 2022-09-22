@@ -102,10 +102,14 @@ body {
     // position: sticky;
     // top: 0;
     // margin-top: 8ex;
+
     .control {
-      // background-color: rgb(0, 213, 255);
       background-color: white;
-      display: flex;
+      // display: flex;
+
+      display: grid;
+      grid-auto-flow: column;
+      // grid-template-columns: 1fr;
       // position: sticky;
       // top: 0;
 
@@ -142,10 +146,23 @@ body {
               opacity: 1;
             }
           }
-          h1 {
-            text-transform: uppercase;
-            width: 10ch;
+          .product-title {
+            position: relative;
+            display: flex;
+
+            h1 {
+              text-transform: uppercase;
+              width: 10ch;
+            }
+            .doodle-down {
+              align-self: end;
+              justify-self: end;
+              flex-grow: 1;
+              transform: rotate(180deg);
+              transform: rotateX(180deg);
+            }
           }
+
           h4 {
             // text-indent: useSize(md);
           }
@@ -164,6 +181,7 @@ body {
                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
               }
             }
+
             li {
               display: flex;
               flex-direction: column-reverse;
@@ -181,10 +199,23 @@ body {
           button {
             justify-self: center;
             transition: all 150ms ease-in;
+            margin-top: 8ex;
+            display: flex;
+            flex-direction: row-reverse;
+            gap: useSize(xs);
+            justify-content: center;
+            align-items: center;
+            .doodle-heart {
+              width: 2ex;
+              height: 2ex;
+            }
             &:hover {
               background-color: black;
               color: white;
               transform: translateY(-1ex);
+              .doodle-heart {
+                fill: white;
+              }
             }
           }
         }
@@ -195,6 +226,7 @@ body {
         overflow-y: hidden;
         overflow-x: hidden;
         article {
+          padding: 4ex;
           height: 100vh;
           width: 100%;
           display: block;
