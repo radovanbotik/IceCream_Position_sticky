@@ -38,6 +38,10 @@ img {
      object-fit: cover;
 }
 
+button {
+  cursor: pointer;
+}
+
 .button-shop {
   display: inline-block;
   padding: 2ex 6ex;
@@ -85,11 +89,11 @@ body section.overflow .control .left .grid-control > * {
 }
 body section.overflow .control .left .grid-control h1 {
   text-transform: uppercase;
+  width: 10ch;
 }
 body section.overflow .control .left .grid-control ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(50px, 100px));
+  grid-template-columns: repeat(auto-fit, minmax(10%, 1fr));
   -moz-column-gap: 3ex;
        column-gap: 3ex;
   row-gap: 4ex;
@@ -109,6 +113,12 @@ body section.overflow .control .left .grid-control ul li img {
 }
 body section.overflow .control .left .grid-control button {
   justify-self: center;
+  transition: all 150ms ease-in;
+}
+body section.overflow .control .left .grid-control button:hover {
+  background-color: black;
+  color: white;
+  transform: translateY(-1ex);
 }
 body section.overflow .control .right {
   position: relative;
@@ -120,19 +130,14 @@ body section.overflow .control .right article {
   height: 100vh;
   width: 100%;
   display: block;
+  position: relative;
 }
-body section.overflow .control .right article:nth-child(1) {
-  background-color: salmon;
-}
-body section.overflow .control .right article:nth-child(2) {
-  background-color: rgb(217, 112, 100);
-}
-body section.overflow .control .right article:nth-child(3) {
-  background-color: rgb(165, 85, 76);
-}
-body section.overflow .control .right article:nth-child(4) {
-  background-color: rgb(104, 53, 47);
-}
-body section.overflow .control .right article:nth-child(5) {
-  background-color: rgb(59, 31, 28);
+body section.overflow .control .right article::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.105);
 }/*# sourceMappingURL=index.css.map */

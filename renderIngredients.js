@@ -24,7 +24,7 @@ const renderIngredients = product => {
 
   ingredientsDOM.innerHTML = `
   <h1>${productTitle}</h1>
-  <h4>Is made out of ${productIngredients.length} basic ingredients:</h4>
+  <h4>${productIngredients.length} basic ingredients:</h4>
   <ul>
    ${ingredientsList}
   </ul>
