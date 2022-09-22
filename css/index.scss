@@ -108,19 +108,16 @@ body {
       }
       .left {
         max-height: 100vh;
-        // background-color: blue;
         position: sticky;
         overflow-y: hidden;
         top: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
+        display: grid;
+        place-items: center;
         .grid-control {
-          // height: 100vh;
+          width: 100%;
           display: grid;
-          grid-template-rows: min-content min-content 1fr min-content;
-          grid-template-columns: 4vw 1fr 4vw;
+          grid-template-columns: 2vw 1fr 2vw;
           column-gap: useSize(lg);
           row-gap: useSize(xl);
 
@@ -136,7 +133,7 @@ body {
           }
           ul {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(10%, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
             column-gap: useSize(md);
             row-gap: useSize(lg);
             li {
