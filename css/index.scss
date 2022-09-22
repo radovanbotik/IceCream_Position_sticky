@@ -95,8 +95,10 @@ body {
   font-size: useSize(sm);
   display: grid;
   grid-template-rows: 100vh 1fr 100vh;
+  grid-template-columns: 8vw 1fr 8vw;
   section {
     background-color: rgb(120, 203, 56);
+    grid-column: 2/3;
   }
   section.overflow {
     // position: sticky;
@@ -151,6 +153,15 @@ body {
             width: clamp(0.5rem, 10ch, 15ch);
             border-left: 0.25ex solid black;
             padding-left: 1ex;
+            animation: clipIntoView 500ms ease-in;
+            @keyframes clipIntoView {
+              0% {
+                clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+              }
+              100% {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+              }
+            }
           }
           .product-title {
             position: relative;
