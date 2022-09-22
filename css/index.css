@@ -105,13 +105,13 @@ body section.overflow .control .left .grid-control > * {
     opacity: 1;
   }
 }
+body section.overflow .control .left .grid-control h1 {
+  text-transform: uppercase;
+  width: clamp(0.5rem, 10ch, 15ch);
+}
 body section.overflow .control .left .grid-control .product-title {
   position: relative;
   display: flex;
-}
-body section.overflow .control .left .grid-control .product-title h1 {
-  text-transform: uppercase;
-  width: 10ch;
 }
 body section.overflow .control .left .grid-control .product-title .doodle-down {
   align-self: end;
@@ -202,9 +202,14 @@ body section.overflow .control .right article {
 body section.overflow .control .right article::after {
   content: "";
   position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
+  height: calc(100% - 8ex);
+  width: calc(100% - 8ex);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.105);
+  box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.161);
+}
+body section.overflow .control .right article img {
+  border-radius: 8px;
 }/*# sourceMappingURL=index.css.map */
