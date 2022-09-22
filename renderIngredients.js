@@ -8,7 +8,6 @@ const renderIngredients = product => {
   });
   const { id: productTitle } = currentRecipe[0];
   const productIngredients = currentRecipe[0].ingredients;
-  console.log(productIngredients);
   const ingredientsList = productIngredients
     .map(obj => {
       return `
@@ -30,9 +29,5 @@ const renderIngredients = product => {
   </ul>
   <button class="button-shop">Order Now</button>
   `;
-  //   const listItems = [...ingredientsDOM.querySelector("ul").children];
-  //   listItems.forEach(li => {
-  //     li.style.opacity = 1;
-  //   });
 };
 export { renderIngredients };

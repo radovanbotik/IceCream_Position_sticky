@@ -59,6 +59,12 @@ $sizes: (
 ul {
   list-style: none;
 }
+h1,
+h2,
+h3,
+h4,
+h5 {
+}
 h1 {
   font-size: useSize(xl);
 }
@@ -85,7 +91,7 @@ button {
   font-size: inherit;
 }
 body {
-  font-family: useFont(Mulish);
+  font-family: useFont(Muli);
   font-size: useSize(sm);
   display: grid;
   grid-template-rows: 100vh 1fr 100vh;
@@ -118,8 +124,11 @@ body {
           width: 100%;
           display: grid;
           grid-template-columns: 2vw 1fr 2vw;
-          column-gap: useSize(lg);
-          row-gap: useSize(xl);
+          // grid-auto-rows: 1fr;
+          // column-gap: useSize(lg);
+          // row-gap: useSize(xl);
+          column-gap: clamp(0px, useSize(lg), useSize(xl));
+          row-gap: clamp(0px, useSize(lg), useSize(xl));
 
           & > * {
             grid-column: 2/-2;
@@ -137,12 +146,11 @@ body {
             column-gap: useSize(md);
             row-gap: useSize(lg);
             li {
-              // transition: all 5s ease-out;
-              // opacity: 0;
               display: flex;
               flex-direction: column-reverse;
               span {
                 text-align: center;
+                text-transform: capitalize;
               }
               img {
                 height: 100%;

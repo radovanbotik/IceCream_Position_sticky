@@ -78,7 +78,7 @@ const recipes = [
     id: "coffee overdose",
     ingredients: [
       {
-        ingredient: "roasted coffee grains",
+        ingredient: "coffee beans",
         image: "./assets/images/ingredients/coffee-grains.jpg",
       },
       {
@@ -107,11 +107,11 @@ const recipes = [
         image: "./assets/images/ingredients/banana.jpg",
       },
       {
-        ingredient: "kiwi-sec",
+        ingredient: "kiwi",
         image: "./assets/images/ingredients/kiwi-sec.jpg",
       },
       {
-        ingredient: "chunks of dried pineapple",
+        ingredient: "pineapple",
         image: "./assets/images/ingredients/dried-pineapple.jpg",
       },
       {
