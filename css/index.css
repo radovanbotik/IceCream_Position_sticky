@@ -85,6 +85,24 @@ body section.overflow .control .left .grid-control {
 }
 body section.overflow .control .left .grid-control > * {
   grid-column: 2/-2;
+  -webkit-animation: appear 250ms ease-in;
+          animation: appear 250ms ease-in;
+}
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 body section.overflow .control .left .grid-control h1 {
   text-transform: uppercase;
@@ -96,6 +114,28 @@ body section.overflow .control .left .grid-control ul {
   -moz-column-gap: 3ex;
        column-gap: 3ex;
   row-gap: 4ex;
+  -webkit-animation: clipIntoView 250ms ease-in;
+          animation: clipIntoView 250ms ease-in;
+}
+@-webkit-keyframes clipIntoView {
+  0% {
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+@keyframes clipIntoView {
+  0% {
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
 }
 body section.overflow .control .left .grid-control ul li {
   display: flex;
@@ -131,6 +171,7 @@ body section.overflow .control .right article {
   width: 100%;
   display: block;
   position: relative;
+  transition: all 250ms ease-in;
 }
 body section.overflow .control .right article::after {
   content: "";

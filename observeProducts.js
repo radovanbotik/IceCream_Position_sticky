@@ -12,9 +12,11 @@ const observeProducts = productsRight => {
       if (entry.isIntersecting) {
         // console.log(entry.target, " is intersecting");
         renderIngredients(entry.target);
+        entry.target.style.opacity = 1;
         return entry.target;
       } else {
         // console.log(entry.target, " is not intersecting");
+        entry.target.style.opacity = 0.3;
       }
     });
   };
