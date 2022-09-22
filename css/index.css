@@ -13,31 +13,95 @@
   padding: 0;
 }
 
-svg {
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-size: 8ex;
+}
+
+h2 {
+  font-size: 4ex;
+}
+
+h4 {
+  font-size: 3ex;
+}
+
+img {
+  height: 100%;
+  width: 100%;
   display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.button-shop {
+  display: inline-block;
+  padding: 2ex 6ex;
+  border-radius: 2ex;
+  background-color: transparent;
+  font-size: inherit;
 }
 
 body {
+  font-size: 2ex;
   display: grid;
   grid-template-rows: 100vh 1fr 100vh;
 }
 body section {
-  background-color: black;
+  background-color: rgb(120, 203, 56);
 }
 body section.overflow .control {
-  background-color: fuchsia;
+  background-color: rgb(0, 213, 255);
   display: flex;
 }
 body section.overflow .control > * {
   flex: 1;
 }
 body section.overflow .control .left {
-  height: 100vh;
-  background-color: blue;
+  max-height: 100vh;
   position: -webkit-sticky;
   position: sticky;
   overflow-y: hidden;
   top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body section.overflow .control .left .grid-control {
+  display: grid;
+  grid-template-rows: -webkit-min-content -webkit-min-content 1fr -webkit-min-content;
+  grid-template-rows: min-content min-content 1fr min-content;
+  grid-template-columns: 4vw 1fr 4vw;
+  gap: 4ex;
+}
+body section.overflow .control .left .grid-control > * {
+  grid-column: 2/-2;
+}
+body section.overflow .control .left .grid-control ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  -moz-column-gap: 3ex;
+       column-gap: 3ex;
+  row-gap: 4ex;
+}
+body section.overflow .control .left .grid-control ul li {
+  display: flex;
+  flex-direction: column-reverse;
+}
+body section.overflow .control .left .grid-control ul li span {
+  text-align: center;
+}
+body section.overflow .control .left .grid-control ul li img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+body section.overflow .control .left .grid-control button {
+  justify-self: center;
 }
 body section.overflow .control .right {
   position: relative;
