@@ -11,6 +11,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 ul {
@@ -54,7 +55,7 @@ body section {
   background-color: rgb(120, 203, 56);
 }
 body section.overflow .control {
-  background-color: rgb(0, 213, 255);
+  background-color: white;
   display: flex;
 }
 body section.overflow .control > * {
