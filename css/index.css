@@ -76,10 +76,15 @@ body section.overflow .control .left .grid-control {
   grid-template-rows: -webkit-min-content -webkit-min-content 1fr -webkit-min-content;
   grid-template-rows: min-content min-content 1fr min-content;
   grid-template-columns: 4vw 1fr 4vw;
-  gap: 4ex;
+  -moz-column-gap: 4ex;
+       column-gap: 4ex;
+  row-gap: 8ex;
 }
 body section.overflow .control .left .grid-control > * {
   grid-column: 2/-2;
+}
+body section.overflow .control .left .grid-control h1 {
+  text-transform: uppercase;
 }
 body section.overflow .control .left .grid-control ul {
   display: grid;

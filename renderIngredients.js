@@ -24,11 +24,15 @@ const renderIngredients = product => {
 
   ingredientsDOM.innerHTML = `
   <h1>${productTitle}</h1>
-  <h4>is made of ${productIngredients.length} ingredients:</h4>
+  <h4>Is made out of ${productIngredients.length} basic ingredients:</h4>
   <ul>
    ${ingredientsList}
   </ul>
-  <button class="button-shop">shop now</button>
+  <button class="button-shop">Order Now</button>
   `;
+  //   const listItems = [...ingredientsDOM.querySelector("ul").children];
+  //   listItems.forEach(li => {
+  //     li.style.opacity = 1;
+  //   });
 };
 export { renderIngredients };
