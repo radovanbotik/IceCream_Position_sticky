@@ -108,6 +108,8 @@ body section.overflow .control .left .grid-control > * {
 body section.overflow .control .left .grid-control h1 {
   text-transform: uppercase;
   width: clamp(0.5rem, 10ch, 15ch);
+  border-left: 0.25ex solid black;
+  padding-left: 1ex;
 }
 body section.overflow .control .left .grid-control .product-title {
   position: relative;

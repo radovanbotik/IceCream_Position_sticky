@@ -149,12 +149,15 @@ body {
           h1 {
             text-transform: uppercase;
             width: clamp(0.5rem, 10ch, 15ch);
+            border-left: 0.25ex solid black;
+            padding-left: 1ex;
           }
           .product-title {
             position: relative;
             display: flex;
 
             h4 {
+              // text-decoration: underline;
             }
             .doodle-down {
               align-self: end;
