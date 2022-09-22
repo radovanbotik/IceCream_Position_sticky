@@ -65,10 +65,6 @@ const recipes = [
         image: "./assets/images/ingredients/milk.png",
       },
       {
-        ingredient: "sugar",
-        image: "./assets/images/ingredients/sugar.jpg",
-      },
-      {
         ingredient: "eggs",
         image: "./assets/images/ingredients/eggs-two.jpg",
       },
