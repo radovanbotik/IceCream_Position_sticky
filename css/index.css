@@ -84,6 +84,7 @@ body section.overflow .control .left .grid-control > * {
 body section.overflow .control .left .grid-control ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(50px, 100px));
   -moz-column-gap: 3ex;
        column-gap: 3ex;
   row-gap: 4ex;

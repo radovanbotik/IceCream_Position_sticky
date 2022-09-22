@@ -128,10 +128,9 @@ body {
           h4 {
           }
           ul {
-            // display: flex;
-            // flex-wrap: wrap;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+            grid-template-rows: repeat(auto-fit, minmax(50px, 100px));
             column-gap: useSize(md);
             row-gap: useSize(lg);
             li {
