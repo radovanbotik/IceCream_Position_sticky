@@ -1,6 +1,7 @@
 import { products } from "./products.js";
 import { recipes } from "./recipes.js";
 import { getElement } from "./getElement.js";
+import { observeProducts } from "./observeProducts.js";
 
 const productViewRight = getElement(".product-view-right");
 
@@ -19,8 +20,10 @@ const renderProducts = () => {
     })
     .join("");
   productViewRight.innerHTML = productsHTML;
+  return productViewRight;
 };
 
 window.addEventListener("DOMContentLoaded", () => {
   renderProducts();
+  observeProducts(renderProducts());
 });
