@@ -1,10 +1,10 @@
 import { getElement } from "./getElement.js";
 import { observeProducts } from "./observeProducts.js";
 import { renderProducts } from "./renderProducts.js";
-import { observeLogo } from "./observeLogo.js";
+import { headerHandler } from "./headerHandler.js";
 
 window.addEventListener("DOMContentLoaded", () => {
-  observeLogo();
+  headerHandler();
   const renderedProducts = renderProducts();
   observeProducts(renderedProducts);
 });

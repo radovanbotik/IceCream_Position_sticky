@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;1,300&family=Old+Standard+TT:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400&family=Mulish:ital,wght@0,300;0,400;1,300&display=swap");
 @font-face {
   font-family: "Futura";
   src: url(../assets/Fonts/FuturaCondensedRegular.ttf);
@@ -51,75 +51,218 @@ button {
 }
 
 body {
-  font-family: "Mulish";
+  font-family: "Montserrat";
   font-size: 2ex;
   display: grid;
-  grid-template-rows: -webkit-min-content 100vh 1fr 100vh;
-  grid-template-rows: min-content 100vh 1fr 100vh;
+  grid-template-rows: -webkit-min-content 100vh 50vh 1fr 100vh;
+  grid-template-rows: min-content 100vh 50vh 1fr 100vh;
   grid-template-columns: 8vw 1fr 8vw;
-  gap: 3ex;
+  -moz-column-gap: 3ex;
+       column-gap: 3ex;
+  background-color: #f0f3f3;
 }
-body header {
+body .main-header {
   grid-column: 1/-1;
-  background-color: blue;
+  color: black;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   width: 100%;
-  padding: 1ex 4ex;
+  padding: 2ex 4ex;
   z-index: 10;
   display: flex;
+  flex-direction: column;
 }
-body header.logo-sizedown {
+body .main-header .announcer {
+  background-color: black;
+  color: white;
+  font-style: italic;
+  font-weight: 300;
+}
+body .main-header .announcer h5 {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1ex 0;
+}
+body .main-header.logo-sizedown {
   background-color: transparent;
 }
-body header.logo-sizedown .nav-control .logo {
+body .main-header.logo-sizedown .announcer {
+  display: none;
+}
+body .main-header.logo-sizedown .nav-control .logo {
   max-height: 7vh;
 }
-body header .nav-control {
-  align-self: center;
+body .main-header.logo-sizedown .nav-control .navbar {
+  color: black;
+  display: none;
+}
+body .main-header .nav-control {
   flex-grow: 1;
   display: flex;
   align-items: center;
 }
-body header .nav-control .logo {
+body .main-header .nav-control .logo {
   max-height: 10vh;
   aspect-ratio: 1;
   margin-right: auto;
   transition: all 250ms ease-in-out;
 }
-body header .nav-control .logo img {
+body .main-header .nav-control .logo img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-body header .nav-control .navbar ul {
+body .main-header .nav-control .navbar ul {
   display: flex;
   gap: 4ex;
 }
+body .main-header .nav-control .navbar ul li {
+  cursor: pointer;
+  display: flex;
+  gap: 1ex;
+  position: relative;
+}
+body .main-header .nav-control .navbar ul li::before {
+  content: "";
+  height: 0ex;
+  background-color: rgba(0, 0, 0, 0.21);
+  transition: 250ms ease-in-out;
+  flex-shrink: 0;
+}
+body .main-header .nav-control .navbar ul li:hover::before {
+  content: "+";
+  background-color: rgba(0, 0, 0, 0.502);
+}
+body .main-header .nav-control .navbar.swap-colors {
+  color: black;
+  display: block;
+}
 body section {
-  background-color: rgb(120, 203, 56);
   grid-column: 2/3;
 }
-body section.overflow .control {
-  background-color: white;
+body .banner {
+  grid-column: 1/-1;
+}
+body .banner__image {
+  position: relative;
+}
+body .banner__image img {
+  width: 100%;
+  height: 100%;
+}
+body .banner > article {
+  position: relative;
+  padding: 8ex 0;
+  display: grid;
+  grid-template-columns: 4vw 1fr 4vw;
+  grid-template-rows: -webkit-min-content 1fr;
+  grid-template-rows: min-content 1fr;
+  row-gap: 8ex;
+  background-size: cover;
+}
+body .banner > article header {
+  grid-column: 2/-2;
+  display: flex;
+  justify-content: end;
+}
+body .banner > article header .socials {
+  display: flex;
+  align-items: center;
+  gap: 3ex;
+}
+body .banner > article header .socials li {
+  width: 4ex;
+  height: 4ex;
+}
+body .banner > article header .socials li svg {
+  fill: black;
+}
+body .banner > article header .image-control {
+  margin-left: auto;
+  height: 10em;
+}
+body .banner > article footer {
+  grid-column: 2/-2;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: -webkit-min-content;
+  grid-auto-rows: min-content;
+  gap: 4ex;
+}
+body .banner > article footer h1 {
+  font-family: "Bebas Neue";
+  text-align: end;
+  text-transform: uppercase;
+  font-size: 6rem;
+}
+body .banner > article article {
+  justify-self: flex-end;
+  text-align: right;
+  width: 40ch;
+  display: flex;
+  flex-direction: column;
+  gap: 4ex;
+}
+body .banner > article article button {
+  margin-left: auto;
+  transition: all 150ms ease-in;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1ex;
+  justify-content: center;
+  align-items: center;
+}
+body .banner > article article button .doodle-heart {
+  width: 2ex;
+  height: 2ex;
+}
+body .banner > article article button:hover {
+  background-color: black;
+  color: white;
+  transform: translateY(-1ex);
+}
+body .banner > article article button:hover .doodle-heart {
+  fill: white;
+}
+body .banner > article article .doodle {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  aspect-ratio: 1;
+  width: 25%;
+}
+body .banner > article article .doodle img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+body .spacer {
+  background-image: url(../assets/images/patterns/background.jpg);
+  filter: hue-rotate(180deg);
+  background-position: bottom;
+  grid-column: 1/-1;
+}
+body .overflow .control {
+  background-color: #f0f3f3;
   display: grid;
   grid-auto-flow: column;
 }
-body section.overflow .control > * {
+body .overflow .control > * {
   flex: 1;
 }
-body section.overflow .control .left {
+body .overflow .control .left {
   max-height: 100vh;
   position: -webkit-sticky;
   position: sticky;
-  overflow-y: hidden;
   top: 0;
   display: grid;
   place-items: center;
 }
-body section.overflow .control .left .grid-control {
+body .overflow .control .left .grid-control {
   width: 100%;
   display: grid;
   grid-template-columns: 2vw 1fr 2vw;
@@ -127,7 +270,7 @@ body section.overflow .control .left .grid-control {
        column-gap: clamp(0px, 4ex, 8ex);
   row-gap: clamp(0px, 4ex, 8ex);
 }
-body section.overflow .control .left .grid-control > * {
+body .overflow .control .left .grid-control > * {
   grid-column: 2/-2;
   -webkit-animation: appear 250ms ease-in;
           animation: appear 250ms ease-in;
@@ -148,7 +291,7 @@ body section.overflow .control .left .grid-control > * {
     opacity: 1;
   }
 }
-body section.overflow .control .left .grid-control h1 {
+body .overflow .control .left .grid-control h1 {
   text-transform: uppercase;
   width: clamp(0.5rem, 10ch, 15ch);
   border-left: 0.25ex solid black;
@@ -176,11 +319,11 @@ body section.overflow .control .left .grid-control h1 {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
-body section.overflow .control .left .grid-control .product-title {
+body .overflow .control .left .grid-control .product-title {
   position: relative;
   display: flex;
 }
-body section.overflow .control .left .grid-control .product-title .doodle-down {
+body .overflow .control .left .grid-control .product-title .doodle-down {
   align-self: end;
   justify-self: end;
   flex-grow: 1;
@@ -213,7 +356,7 @@ body section.overflow .control .left .grid-control .product-title .doodle-down {
     stroke-dasharray: 5000;
   }
 }
-body section.overflow .control .left .grid-control ul {
+body .overflow .control .left .grid-control ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   -moz-column-gap: 3ex;
@@ -232,21 +375,21 @@ body section.overflow .control .left .grid-control ul {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
-body section.overflow .control .left .grid-control ul li {
+body .overflow .control .left .grid-control ul li {
   display: flex;
   flex-direction: column-reverse;
 }
-body section.overflow .control .left .grid-control ul li span {
+body .overflow .control .left .grid-control ul li span {
   text-align: center;
   text-transform: capitalize;
 }
-body section.overflow .control .left .grid-control ul li img {
+body .overflow .control .left .grid-control ul li img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
 }
-body section.overflow .control .left .grid-control button {
+body .overflow .control .left .grid-control button {
   justify-self: center;
   transition: all 150ms ease-in;
   margin-top: 8ex;
@@ -256,25 +399,23 @@ body section.overflow .control .left .grid-control button {
   justify-content: center;
   align-items: center;
 }
-body section.overflow .control .left .grid-control button .doodle-heart {
+body .overflow .control .left .grid-control button .doodle-heart {
   width: 2ex;
   height: 2ex;
 }
-body section.overflow .control .left .grid-control button:hover {
+body .overflow .control .left .grid-control button:hover {
   background-color: black;
   color: white;
   transform: translateY(-1ex);
 }
-body section.overflow .control .left .grid-control button:hover .doodle-heart {
+body .overflow .control .left .grid-control button:hover .doodle-heart {
   fill: white;
 }
-body section.overflow .control .right {
+body .overflow .control .right {
   position: relative;
-  top: 0;
   overflow-y: hidden;
-  overflow-x: hidden;
 }
-body section.overflow .control .right article {
+body .overflow .control .right article {
   padding: 4ex;
   height: 100vh;
   width: 100%;
@@ -283,7 +424,7 @@ body section.overflow .control .right article {
   display: grid;
   place-items: center;
 }
-body section.overflow .control .right article .star {
+body .overflow .control .right article .star {
   width: 50%;
   height: 50%;
   top: 50%;
@@ -292,7 +433,7 @@ body section.overflow .control .right article .star {
   position: absolute;
   z-index: 2;
 }
-body section.overflow .control .right article .star path:nth-child(1) {
+body .overflow .control .right article .star path:nth-child(1) {
   -webkit-animation: move 2s forwards;
           animation: move 2s forwards;
 }
@@ -342,15 +483,15 @@ body section.overflow .control .right article .star path:nth-child(1) {
     stroke: white;
   }
 }
-body section.overflow .control .right article .star path:nth-child(3) {
+body .overflow .control .right article .star path:nth-child(3) {
   stroke: transparent;
 }
-body section.overflow .control .right article img {
+body .overflow .control .right article img {
   border-radius: 8px;
   height: 70%;
   aspect-ratio: 1;
 }
-body section.overflow .control .right article img::after {
+body .overflow .control .right article img::after {
   content: "";
   position: absolute;
   height: calc(100% - 8ex);

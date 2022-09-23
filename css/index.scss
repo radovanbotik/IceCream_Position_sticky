@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;1,300&family=Old+Standard+TT:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400&family=Mulish:ital,wght@0,300;0,400;1,300&display=swap");
 
 @font-face {
   font-family: "Futura";
@@ -12,7 +12,8 @@ $colors: (
 
 $fonts: (
   Muli: "Mulish",
-  OldStandardTT: "Old Standard TT",
+  Montserrat: "Montserrat",
+  BebasNeue: "Bebas Neue",
 );
 $screen-large: 800px;
 // @mixin screen-lg {
@@ -91,31 +92,55 @@ button {
   font-size: inherit;
 }
 body {
-  font-family: useFont(Muli);
+  font-family: useFont(Montserrat);
   font-size: useSize(sm);
   display: grid;
   // grid-auto-rows: 100vh;
-  grid-template-rows: min-content 100vh 1fr 100vh;
+  grid-template-rows: min-content 100vh 50vh 1fr 100vh;
   grid-template-columns: 8vw 1fr 8vw;
-  gap: useSize(md);
-  header {
+  column-gap: useSize(md);
+  background-color: #f0f3f3;
+  .main-header {
     grid-column: 1/-1;
-    background-color: blue;
+    // color: #e21682;
+    color: black;
+    // color: #ed6a6f;
     position: sticky;
     top: 0;
     width: 100%;
-    padding: useSize(xs) useSize(lg);
+    padding: useSize(sm) useSize(lg);
     z-index: 10;
     display: flex;
+    flex-direction: column;
+    .announcer {
+      background-color: black;
+      color: white;
+      font-style: italic;
+      font-weight: 300;
+      h5 {
+        text-align: center;
+        text-transform: uppercase;
+        padding: 1ex 0;
+      }
+    }
+
     &.logo-sizedown {
       background-color: transparent;
+      & .announcer {
+        display: none;
+      }
       & .nav-control .logo {
         max-height: 7vh;
+      }
+      & .nav-control .navbar {
+        // color: #f0f3f3;
+        // color: #e21683ac;
+        color: black;
+        display: none;
       }
     }
 
     .nav-control {
-      align-self: center;
       flex-grow: 1;
       display: flex;
       align-items: center;
@@ -137,19 +162,168 @@ body {
         ul {
           display: flex;
           gap: useSize(lg);
+          li {
+            cursor: pointer;
+            display: flex;
+            gap: 1ex;
+            position: relative;
+
+            &::before {
+              content: "";
+              height: 0ex;
+              // width: 1.5px;
+              // background-color: #e216830c;
+              background-color: rgba(0, 0, 0, 0.21);
+              transition: 250ms ease-in-out;
+              flex-shrink: 0;
+            }
+            &:hover::before {
+              content: "+";
+              // height: 100%;
+              // width: 1.5px;
+              // background-color: #e21683ac;
+              background-color: rgba(0, 0, 0, 0.502);
+            }
+          }
+        }
+        &.swap-colors {
+          color: black;
+          display: block;
         }
       }
     }
   }
   section {
-    background-color: rgb(120, 203, 56);
     grid-column: 2/3;
   }
-  section.overflow {
+  .banner {
+    grid-column: 1/-1;
+    // display: flex;
+
+    &__image {
+      // padding: 8ex;
+      position: relative;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   width: 100%;
+      //   height: 100%;
+      //   background-color: rgba(0, 0, 0, 0.104);
+      //   z-index: 900;
+      // }
+    }
+    & > article {
+      // border-left: 4px solid black;
+      position: relative;
+      padding: useSize(xl) 0;
+      display: grid;
+      grid-template-columns: 4vw 1fr 4vw;
+      grid-template-rows: min-content 1fr;
+      row-gap: useSize(xl);
+      // background-color: #ffe4cf;
+      // background-image: url(../assets/images/patterns/pattern3.png);
+      background-size: cover;
+
+      header {
+        grid-column: 2/-2;
+        display: flex;
+        justify-content: end;
+        .socials {
+          display: flex;
+          align-items: center;
+          gap: useSize(md);
+          li {
+            width: 4ex;
+            height: 4ex;
+            // background-color: #f36676;
+            svg {
+              // fill: #ed6a6f;
+              fill: black;
+            }
+          }
+        }
+        .image-control {
+          margin-left: auto;
+          height: 10em;
+        }
+      }
+      & footer {
+        grid-column: 2/-2;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: min-content;
+        gap: useSize(lg);
+        & h1 {
+          font-family: useFont(BebasNeue);
+          text-align: end;
+          text-transform: uppercase;
+          font-size: 6rem;
+        }
+      }
+      & article {
+        justify-self: flex-end;
+        text-align: right;
+        width: 40ch;
+        display: flex;
+        flex-direction: column;
+        gap: 4ex;
+        & button {
+          margin-left: auto;
+          transition: all 150ms ease-in;
+          display: flex;
+          flex-direction: row-reverse;
+          gap: useSize(xs);
+          justify-content: center;
+          align-items: center;
+          .doodle-heart {
+            width: 2ex;
+            height: 2ex;
+          }
+          &:hover {
+            background-color: black;
+            color: white;
+            transform: translateY(-1ex);
+            .doodle-heart {
+              fill: white;
+            }
+          }
+        }
+
+        & .doodle {
+          position: absolute;
+          top: 40%;
+          left: 20%;
+          aspect-ratio: 1;
+          width: 25%;
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+  .spacer {
+    background-image: url(../assets/images/patterns/background.jpg);
+    filter: hue-rotate(180deg);
+    background-position: bottom;
+    grid-column: 1/-1;
+  }
+  .overflow {
     .control {
-      background-color: white;
+      background-color: #f0f3f3;
       display: grid;
       grid-auto-flow: column;
+      // display: flex;
+      // flex-direction: column;
       // position: relative;
       // position: sticky;
       // top: 10;
@@ -160,8 +334,8 @@ body {
       .left {
         max-height: 100vh;
         position: sticky;
-        overflow-y: hidden;
         top: 0;
+        // overflow-y: hidden;
 
         display: grid;
         place-items: center;
@@ -287,9 +461,9 @@ body {
       }
       .right {
         position: relative;
-        top: 0;
+        // top: 0;
         overflow-y: hidden;
-        overflow-x: hidden;
+        // overflow-x: hidden;
         article {
           padding: 4ex;
           height: 100vh;
