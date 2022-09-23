@@ -54,8 +54,49 @@ body {
   font-family: "Mulish";
   font-size: 2ex;
   display: grid;
-  grid-template-rows: 100vh 1fr 100vh;
+  grid-template-rows: -webkit-min-content 100vh 1fr 100vh;
+  grid-template-rows: min-content 100vh 1fr 100vh;
   grid-template-columns: 8vw 1fr 8vw;
+  gap: 3ex;
+}
+body header {
+  grid-column: 1/-1;
+  background-color: blue;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 1ex 4ex;
+  z-index: 10;
+  display: flex;
+}
+body header.logo-sizedown {
+  background-color: transparent;
+}
+body header.logo-sizedown .nav-control .logo {
+  max-height: 7vh;
+}
+body header .nav-control {
+  align-self: center;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+body header .nav-control .logo {
+  max-height: 10vh;
+  aspect-ratio: 1;
+  margin-right: auto;
+  transition: all 250ms ease-in-out;
+}
+body header .nav-control .logo img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body header .nav-control .navbar ul {
+  display: flex;
+  gap: 4ex;
 }
 body section {
   background-color: rgb(120, 203, 56);
@@ -65,7 +106,6 @@ body section.overflow .control {
   background-color: white;
   display: grid;
   grid-auto-flow: column;
-  position: relative;
 }
 body section.overflow .control > * {
   flex: 1;
