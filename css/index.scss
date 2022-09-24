@@ -172,27 +172,26 @@ body {
         ul {
           display: flex;
           gap: useSize(lg);
+
           li {
             cursor: pointer;
             display: flex;
-            gap: 1ex;
+            // gap: 1ex;
             position: relative;
+            align-items: center;
 
             &::before {
+              // align-self: center;
               content: "";
               height: 0ex;
-              // width: 1.5px;
-              // background-color: #e216830c;
-              background-color: rgba(0, 0, 0, 0.21);
               transition: 250ms ease-in-out;
-              flex-shrink: 0;
+              color: #81feea;
             }
             &:hover::before {
               content: "+";
-              // height: 100%;
-              // width: 1.5px;
-              // background-color: #e21683ac;
-              background-color: rgba(0, 0, 0, 0.502);
+              font-size: 3ex;
+              color: #ff97b2;
+              transform: rotate(90deg);
             }
           }
         }
@@ -234,14 +233,17 @@ body {
             height: 4ex;
             cursor: pointer;
             transition: transform 150ms ease-in;
-            // perspective-origin: 10ex;
-            &:hover {
-              transform: translateY(-2px) rotateY(180deg);
-            }
 
             svg {
               // fill: #ed6a6f;
               fill: black;
+            }
+
+            &:hover {
+              transform: translateY(-2px);
+              svg {
+                fill: #ff97b2;
+              }
             }
           }
         }
@@ -259,18 +261,21 @@ body {
           text-transform: uppercase;
           font-size: 6rem;
           display: flex;
+          flex-wrap: wrap;
           justify-content: end;
           span {
-            display: block;
             min-width: 0.25ex;
             color: black;
             cursor: crosshair;
-            // transition: 150ms linear;
             &:hover {
-              // transform: rotateY(180deg) scale(1.1);
               transform: scale(1.1);
-              color: red;
+              color: #ff97b2;
             }
+            // &:nth-of-type(even):hover {
+            //   // transform: rotateY(180deg) scale(1.1);
+            //   transform: scale(1.1);
+            //   color: #81feea;
+            // }
           }
         }
         article {
@@ -454,6 +459,8 @@ body {
         }
       }
       .right {
+        display: grid;
+        place-items: center;
         position: relative;
         // top: 0;
         overflow-y: hidden;

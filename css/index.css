@@ -131,19 +131,20 @@ body .main-header .nav-control .navbar ul {
 body .main-header .nav-control .navbar ul li {
   cursor: pointer;
   display: flex;
-  gap: 1ex;
   position: relative;
+  align-items: center;
 }
 body .main-header .nav-control .navbar ul li::before {
   content: "";
   height: 0ex;
-  background-color: rgba(0, 0, 0, 0.21);
   transition: 250ms ease-in-out;
-  flex-shrink: 0;
+  color: #81feea;
 }
 body .main-header .nav-control .navbar ul li:hover::before {
   content: "+";
-  background-color: rgba(0, 0, 0, 0.502);
+  font-size: 3ex;
+  color: #ff97b2;
+  transform: rotate(90deg);
 }
 body .main-header .nav-control .navbar.swap-colors {
   color: black;
@@ -181,11 +182,14 @@ body .hero-section__details__header .socials li {
   cursor: pointer;
   transition: transform 150ms ease-in;
 }
-body .hero-section__details__header .socials li:hover {
-  transform: translateY(-2px) rotateY(180deg);
-}
 body .hero-section__details__header .socials li svg {
   fill: black;
+}
+body .hero-section__details__header .socials li:hover {
+  transform: translateY(-2px);
+}
+body .hero-section__details__header .socials li:hover svg {
+  fill: #ff97b2;
 }
 body .hero-section__details__footer {
   grid-column: 2/-2;
@@ -202,17 +206,17 @@ body .hero-section__details__footer .hero-title {
   text-transform: uppercase;
   font-size: 6rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: end;
 }
 body .hero-section__details__footer .hero-title span {
-  display: block;
   min-width: 0.25ex;
   color: black;
   cursor: crosshair;
 }
 body .hero-section__details__footer .hero-title span:hover {
   transform: scale(1.1);
-  color: red;
+  color: #ff97b2;
 }
 body .hero-section__details__footer article {
   justify-self: flex-end;
@@ -415,6 +419,8 @@ body .overflow .control .left .grid-control button:hover .doodle-heart {
   fill: white;
 }
 body .overflow .control .right {
+  display: grid;
+  place-items: center;
   position: relative;
   overflow-y: hidden;
 }
