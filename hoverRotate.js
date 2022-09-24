@@ -1,8 +1,8 @@
 import { getElement } from "./getElement.js";
-const heroTitle = getElement(".hero-title");
+const heroTitle = getElement("#herosection-main-title");
 
 const hoverRotate = () => {
-  const heroTitleSplit = [...heroTitle.textContent];
+  const heroTitleSplit = [...heroTitle.innerText];
   heroTitle.innerHTML = heroTitleSplit
     .map(character => {
       return `

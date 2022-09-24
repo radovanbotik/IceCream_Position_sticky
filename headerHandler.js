@@ -1,5 +1,5 @@
 import { getElement } from "./getElement.js";
-const header = getElement("header");
+const header = getElement("#site-header");
 
 const headerHandler = () => {
   const options = {
@@ -15,7 +15,7 @@ const headerHandler = () => {
     });
   };
   const observer = new IntersectionObserver(callback, options);
-  observer.observe(document.querySelector(".left"));
+  observer.observe(document.querySelector("#control-products-data"));
 
   let previousScroll = 0;
   window.addEventListener("scroll", () => {
