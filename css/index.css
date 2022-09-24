@@ -262,8 +262,8 @@ body .spacer .title {
 }
 body .products .control {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-auto-flow: column;
+  grid-auto-columns: 50%;
 }
 body .products .control__data {
   max-height: 100vh;
@@ -271,7 +271,7 @@ body .products .control__data {
   position: sticky;
   top: 0;
   display: grid;
-  place-items: center;
+  place-content: center;
 }
 body .products .control__data__grid {
   width: 100%;
@@ -309,6 +309,7 @@ body .products .control__data__grid .title {
   padding-left: 1ex;
   -webkit-animation: clipIntoView 500ms ease-in;
           animation: clipIntoView 500ms ease-in;
+  font-size: 3.5vw;
 }
 @-webkit-keyframes clipIntoView {
   0% {
@@ -335,6 +336,8 @@ body .products .control__data__grid .subtitle-control {
   display: flex;
 }
 body .products .control__data__grid .subtitle-control svg.doodle-down {
+  height: 60%;
+  width: 60%;
   align-self: end;
   justify-self: end;
   transform: rotate(180deg);
@@ -368,7 +371,7 @@ body .products .control__data__grid .subtitle-control svg.doodle-down {
 }
 body .products .control__data__grid ul.product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
   -moz-column-gap: 3ex;
        column-gap: 3ex;
   row-gap: 4ex;
@@ -405,9 +408,10 @@ body .products .control__data__grid button {
 }
 body .products .control__images {
   display: grid;
-  place-items: center;
+  place-content: center;
   position: relative;
   overflow-y: hidden;
+  overscroll-behavior-block: contain;
 }
 body .products .control__images__image {
   padding: 4ex;
