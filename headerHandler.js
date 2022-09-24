@@ -7,8 +7,6 @@ const headerHandler = () => {
   };
   const callback = (entries, observer) => {
     entries.forEach(entry => {
-      console.log(entry);
-
       if (entry.boundingClientRect.y === 0) {
         document.querySelector(".navbar").classList.add("swap-colors");
       } else {

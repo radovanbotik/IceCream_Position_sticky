@@ -96,10 +96,20 @@ body {
   font-size: useSize(sm);
   display: grid;
   // grid-auto-rows: 100vh;
-  grid-template-rows: min-content 100vh 50vh 1fr 100vh;
+  grid-template-rows: min-content min-content 100vh 50vh 1fr 50vh 100vh;
   grid-template-columns: 8vw 1fr 8vw;
   column-gap: useSize(md);
   background-color: #f0f3f3;
+  .announcer {
+    font-family: useFont(Montserrat);
+    grid-column: 1/-1;
+    background-color: black;
+    color: white;
+    background-image: url(../assets/images/patterns/background.jpg);
+    text-align: center;
+    padding: useSize(xs) 0;
+    text-transform: uppercase;
+  }
   .main-header {
     grid-column: 1/-1;
     // color: #e21682;
@@ -196,30 +206,10 @@ body {
   section {
     grid-column: 2/3;
   }
-  .banner {
+  .hero-section {
     grid-column: 1/-1;
-    // display: flex;
 
-    &__image {
-      // padding: 8ex;
-      position: relative;
-      img {
-        width: 100%;
-        height: 100%;
-      }
-      // &::after {
-      //   content: "";
-      //   position: absolute;
-      //   top: 0;
-      //   left: 0;
-      //   width: 100%;
-      //   height: 100%;
-      //   background-color: rgba(0, 0, 0, 0.104);
-      //   z-index: 900;
-      // }
-    }
-    & > article {
-      // border-left: 4px solid black;
+    &__details {
       position: relative;
       padding: useSize(xl) 0;
       display: grid;
@@ -230,7 +220,7 @@ body {
       // background-image: url(../assets/images/patterns/pattern3.png);
       background-size: cover;
 
-      header {
+      &__header {
         grid-column: 2/-2;
         display: flex;
         justify-content: end;
@@ -238,74 +228,78 @@ body {
           display: flex;
           align-items: center;
           gap: useSize(md);
+
           li {
             width: 4ex;
             height: 4ex;
-            // background-color: #f36676;
+            cursor: pointer;
+            transition: transform 150ms ease-in;
+            // perspective-origin: 10ex;
+            &:hover {
+              transform: translateY(-2px) rotateY(180deg);
+            }
+
             svg {
               // fill: #ed6a6f;
               fill: black;
             }
           }
         }
-        .image-control {
-          margin-left: auto;
-          height: 10em;
-        }
       }
-      & footer {
+      &__footer {
         grid-column: 2/-2;
         position: relative;
         display: grid;
         grid-template-columns: 1fr;
         grid-auto-rows: min-content;
         gap: useSize(lg);
-        & h1 {
+        .hero-title {
           font-family: useFont(BebasNeue);
           text-align: end;
           text-transform: uppercase;
           font-size: 6rem;
-        }
-      }
-      & article {
-        justify-self: flex-end;
-        text-align: right;
-        width: 40ch;
-        display: flex;
-        flex-direction: column;
-        gap: 4ex;
-        & button {
-          margin-left: auto;
-          transition: all 150ms ease-in;
           display: flex;
-          flex-direction: row-reverse;
-          gap: useSize(xs);
-          justify-content: center;
-          align-items: center;
-          .doodle-heart {
-            width: 2ex;
-            height: 2ex;
-          }
-          &:hover {
-            background-color: black;
-            color: white;
-            transform: translateY(-1ex);
-            .doodle-heart {
-              fill: white;
+          justify-content: end;
+          span {
+            display: block;
+            min-width: 0.25ex;
+            color: black;
+            cursor: crosshair;
+            // transition: 150ms linear;
+            &:hover {
+              // transform: rotateY(180deg) scale(1.1);
+              transform: scale(1.1);
+              color: red;
             }
           }
         }
-
-        & .doodle {
-          position: absolute;
-          top: 40%;
-          left: 20%;
-          aspect-ratio: 1;
-          width: 25%;
-          img {
-            height: 100%;
-            width: 100%;
-            object-fit: contain;
+        article {
+          justify-self: flex-end;
+          text-align: right;
+          width: 40ch;
+          display: flex;
+          flex-direction: column;
+          gap: 4ex;
+          button {
+            margin-left: auto;
+            transition: all 150ms ease-in;
+            display: flex;
+            flex-direction: row-reverse;
+            gap: useSize(xs);
+            justify-content: center;
+            align-items: center;
+            .doodle-heart {
+              width: 2ex;
+              height: 2ex;
+            }
+            &:hover {
+              background-color: black;
+              color: white;
+              transform: translateY(-1ex);
+              .doodle-heart {
+                fill: white;
+              }
+            }
           }
         }
       }

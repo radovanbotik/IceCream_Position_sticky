@@ -54,12 +54,22 @@ body {
   font-family: "Montserrat";
   font-size: 2ex;
   display: grid;
-  grid-template-rows: -webkit-min-content 100vh 50vh 1fr 100vh;
-  grid-template-rows: min-content 100vh 50vh 1fr 100vh;
+  grid-template-rows: -webkit-min-content -webkit-min-content 100vh 50vh 1fr 50vh 100vh;
+  grid-template-rows: min-content min-content 100vh 50vh 1fr 50vh 100vh;
   grid-template-columns: 8vw 1fr 8vw;
   -moz-column-gap: 3ex;
        column-gap: 3ex;
   background-color: #f0f3f3;
+}
+body .announcer {
+  font-family: "Montserrat";
+  grid-column: 1/-1;
+  background-color: black;
+  color: white;
+  background-image: url(../assets/images/patterns/background.jpg);
+  text-align: center;
+  padding: 1ex 0;
+  text-transform: uppercase;
 }
 body .main-header {
   grid-column: 1/-1;
@@ -142,17 +152,10 @@ body .main-header .nav-control .navbar.swap-colors {
 body section {
   grid-column: 2/3;
 }
-body .banner {
+body .hero-section {
   grid-column: 1/-1;
 }
-body .banner__image {
-  position: relative;
-}
-body .banner__image img {
-  width: 100%;
-  height: 100%;
-}
-body .banner > article {
+body .hero-section__details {
   position: relative;
   padding: 8ex 0;
   display: grid;
@@ -162,28 +165,29 @@ body .banner > article {
   row-gap: 8ex;
   background-size: cover;
 }
-body .banner > article header {
+body .hero-section__details__header {
   grid-column: 2/-2;
   display: flex;
   justify-content: end;
 }
-body .banner > article header .socials {
+body .hero-section__details__header .socials {
   display: flex;
   align-items: center;
   gap: 3ex;
 }
-body .banner > article header .socials li {
+body .hero-section__details__header .socials li {
   width: 4ex;
   height: 4ex;
+  cursor: pointer;
+  transition: transform 150ms ease-in;
 }
-body .banner > article header .socials li svg {
+body .hero-section__details__header .socials li:hover {
+  transform: translateY(-2px) rotateY(180deg);
+}
+body .hero-section__details__header .socials li svg {
   fill: black;
 }
-body .banner > article header .image-control {
-  margin-left: auto;
-  height: 10em;
-}
-body .banner > article footer {
+body .hero-section__details__footer {
   grid-column: 2/-2;
   position: relative;
   display: grid;
@@ -192,13 +196,25 @@ body .banner > article footer {
   grid-auto-rows: min-content;
   gap: 4ex;
 }
-body .banner > article footer h1 {
+body .hero-section__details__footer .hero-title {
   font-family: "Bebas Neue";
   text-align: end;
   text-transform: uppercase;
   font-size: 6rem;
+  display: flex;
+  justify-content: end;
 }
-body .banner > article article {
+body .hero-section__details__footer .hero-title span {
+  display: block;
+  min-width: 0.25ex;
+  color: black;
+  cursor: crosshair;
+}
+body .hero-section__details__footer .hero-title span:hover {
+  transform: scale(1.1);
+  color: red;
+}
+body .hero-section__details__footer article {
   justify-self: flex-end;
   text-align: right;
   width: 40ch;
@@ -206,7 +222,7 @@ body .banner > article article {
   flex-direction: column;
   gap: 4ex;
 }
-body .banner > article article button {
+body .hero-section__details__footer article button {
   margin-left: auto;
   transition: all 150ms ease-in;
   display: flex;
@@ -215,30 +231,17 @@ body .banner > article article button {
   justify-content: center;
   align-items: center;
 }
-body .banner > article article button .doodle-heart {
+body .hero-section__details__footer article button .doodle-heart {
   width: 2ex;
   height: 2ex;
 }
-body .banner > article article button:hover {
+body .hero-section__details__footer article button:hover {
   background-color: black;
   color: white;
   transform: translateY(-1ex);
 }
-body .banner > article article button:hover .doodle-heart {
+body .hero-section__details__footer article button:hover .doodle-heart {
   fill: white;
-}
-body .banner > article article .doodle {
-  position: absolute;
-  top: 40%;
-  left: 20%;
-  aspect-ratio: 1;
-  width: 25%;
-}
-body .banner > article article .doodle img {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 body .spacer {
   background-image: url(../assets/images/patterns/background.jpg);
