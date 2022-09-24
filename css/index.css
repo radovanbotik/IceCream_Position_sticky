@@ -45,7 +45,6 @@ button {
   background-color: transparent;
   font-size: inherit;
   cursor: pointer;
-  margin-top: 8ex;
   display: flex;
   flex-direction: row-reverse;
   gap: 1ex;
@@ -243,6 +242,7 @@ body .hero-section__details__footer article {
 }
 body .hero-section__details__footer article button {
   margin-left: auto;
+  margin-top: 8ex;
 }
 body .spacer {
   grid-column: 1/-1;
@@ -279,7 +279,7 @@ body .products .control__data__grid {
   grid-template-columns: 1vw 1fr 1vw;
   -moz-column-gap: clamp(0px, 4ex, 8ex);
        column-gap: clamp(0px, 4ex, 8ex);
-  row-gap: clamp(0px, 4ex, 8ex);
+  row-gap: clamp(0px, 8ex, 8ex);
 }
 body .products .control__data__grid > * {
   grid-column: 2/-2;
@@ -336,10 +336,11 @@ body .products .control__data__grid .subtitle-control {
   display: flex;
 }
 body .products .control__data__grid .subtitle-control svg.doodle-down {
+  display: none;
   height: 60%;
   width: 60%;
-  align-self: end;
-  justify-self: end;
+  max-width: 300px;
+  max-height: 200px;
   transform: rotate(180deg);
   transform: rotateX(180deg);
   stroke-dashoffset: 0;
@@ -398,6 +399,7 @@ body .products .control__data__grid ul.product-list li.link span {
 }
 body .products .control__data__grid ul.product-list li.link img {
   height: 100%;
+  max-width: 60px;
   -o-object-fit: cover;
      object-fit: cover;
   -webkit-clip-path: circle();
