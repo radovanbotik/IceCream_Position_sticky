@@ -9,6 +9,7 @@ const observeImages = productsRight => {
 
   const productsCallback = entries => {
     entries.map(entry => {
+      console.log(entry.target);
       if (entry.isIntersecting) {
         renderIngredients(entry.target);
 

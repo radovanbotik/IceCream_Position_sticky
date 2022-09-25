@@ -261,6 +261,7 @@ body .products .control {
   grid-auto-columns: 50%;
 }
 body .products .control__data {
+  align-self: start;
   order: 1;
   max-height: 100vh;
   height: 100%;
@@ -333,7 +334,6 @@ body .products .control__data__grid .title {
 body .products .control__data__grid .subtitle-control {
   position: relative;
   display: flex;
-  justify-self: end;
 }
 body .products .control__data__grid .subtitle-control svg.doodle-down {
   display: none;
@@ -371,7 +371,6 @@ body .products .control__data__grid .subtitle-control svg.doodle-down {
   }
 }
 body .products .control__data__grid ul.product-list {
-  justify-self: end;
   display: flex;
   -moz-column-gap: 2ex;
        column-gap: 2ex;
@@ -408,15 +407,14 @@ body .products .control__data__grid ul.product-list li.link img {
 }
 body .products .control__data__grid button {
   justify-self: flex-start;
-  justify-self: end;
 }
 body .products .control__images {
+  display: grid;
   place-content: center;
   position: relative;
   overflow-y: hidden;
 }
 body .products .control__images__image {
-  padding: 4ex;
   max-height: 100%;
   width: 100%;
   position: relative;
@@ -426,8 +424,8 @@ body .products .control__images__image {
 }
 body .products .control__images__image img {
   border-radius: 8px;
-  height: 70%;
-  aspect-ratio: 1;
+  height: 50%;
+  aspect-ratio: 2/1;
 }
 body .products .control__images__image svg {
   width: 50%;
@@ -511,6 +509,8 @@ body .selected__card:hover > * {
 }
 body .selected__card__title {
   text-align: center;
+  -webkit-text-stroke-width: 1px;
+  text-shadow: 1px 1px 10px black;
 }
 body .selected__card button {
   display: inline-block;

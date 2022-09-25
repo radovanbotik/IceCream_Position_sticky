@@ -333,6 +333,7 @@ body {
       grid-auto-columns: 50%;
 
       &__data {
+        align-self: start;
         order: 1;
         max-height: 100vh;
         height: 100%;
@@ -384,7 +385,7 @@ body {
           .subtitle-control {
             position: relative;
             display: flex;
-            justify-self: end;
+            // justify-self: end;
             svg.doodle-down {
               display: none;
               height: 60%;
@@ -413,7 +414,7 @@ body {
           }
 
           ul.product-list {
-            justify-self: end;
+            // justify-self: end;
 
             // display: grid;
             // grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
@@ -453,12 +454,12 @@ body {
           }
           button {
             justify-self: flex-start;
-            justify-self: end;
+            // justify-self: end;
           }
         }
       }
       &__images {
-        // display: grid;
+        display: grid;
         place-content: center;
         position: relative;
         // scroll-snap-type: y mandatory;
@@ -466,7 +467,7 @@ body {
         overflow-y: hidden;
         // height: 100vh;
         &__image {
-          padding: 4ex;
+          // padding: 4ex;
           max-height: 100%;
           // height: 100%;
           width: 100%;
@@ -475,16 +476,13 @@ body {
           transition: all 250ms ease-in;
           display: grid;
           place-items: center;
-          &:nth-of-type(1) {
-            // margin-top: -100%;
-          }
           // position: absolute;
           // scroll-snap-align: end;
 
           img {
             border-radius: 8px;
-            height: 70%;
-            aspect-ratio: 1;
+            height: 50%;
+            aspect-ratio: 2/1;
           }
 
           svg {
@@ -726,11 +724,15 @@ body {
       }
       &__title {
         text-align: center;
+        -webkit-text-stroke-width: 1px;
+        text-shadow: 1px 1px 10px black;
       }
       button {
         display: inline-block;
         border: 2px solid white;
         color: white;
+        // box-shadow: 1px 1px 10px black;
+
         svg {
           fill: white;
           stroke: white;
