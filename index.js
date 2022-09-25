@@ -1,11 +1,13 @@
-import { observeProducts } from "./observeProducts.js";
-import { renderProducts } from "./renderProducts.js";
+import { observeImages } from "./observeImages.js";
+import { renderImages } from "./renderImages.js";
 import { headerHandler } from "./headerHandler.js";
 import { hoverRotate } from "./hoverRotate.js";
+import { showFlavours } from "./showFlavours.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   headerHandler();
   hoverRotate();
-  const renderedProducts = renderProducts();
-  observeProducts(renderedProducts);
+  const renderedProducts = renderImages();
+  observeImages(renderedProducts);
+  showFlavours();
 });

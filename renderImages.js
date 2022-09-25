@@ -1,9 +1,9 @@
 import { getElement } from "./getElement.js";
 import { products } from "./products.js";
 
-const productViewRight = getElement("#products-images");
+const images = getElement("#products-images");
 
-const renderProducts = () => {
+const renderImages = () => {
   const productsHTML = products
     .map(product => {
       const { id, image } = product;
@@ -24,8 +24,13 @@ const renderProducts = () => {
       `;
     })
     .join("");
-  productViewRight.innerHTML = productsHTML;
-  return productViewRight;
+  images.innerHTML = productsHTML;
+  // const imagesArr = [...images.children];
+  // console.log(imagesArr);
+  // imagesArr.forEach((art, index) => {
+  //   art.style.top = `${100 * index}%`;
+  // });
+  return images;
 };
 
-export { renderProducts };
+export { renderImages };

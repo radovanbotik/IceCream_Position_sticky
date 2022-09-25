@@ -1,7 +1,7 @@
 import { getElement } from "./getElement.js";
 import { renderIngredients } from "./renderIngredients.js";
 
-const observeProducts = productsRight => {
+const observeImages = productsRight => {
   const products = [...productsRight.querySelectorAll("article")];
   const options = {
     threshold: 0.6,
@@ -26,4 +26,4 @@ const observeProducts = productsRight => {
   });
 };
 
-export { observeProducts };
+export { observeImages };
