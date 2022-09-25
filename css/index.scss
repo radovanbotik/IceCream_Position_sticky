@@ -662,41 +662,34 @@ body {
     flex-direction: column-reverse;
     &__title {
       order: 1;
+      text-transform: uppercase;
     }
     &__list {
       justify-self: end;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 1em;
+      gap: 3em;
       &__item {
         padding: useSize(sm) 0;
-        // overflow: hidden;
-        border-bottom: 2px solid black;
+        overflow: hidden;
+        // border-bottom: 2px solid black;
         position: relative;
         // align-self: flex-start;
 
         span {
           font-size: 2rem;
           display: inline-block;
-          transform: translateY(100%);
+          transform: translateY(200%);
           transition: transform 500ms ease-in;
         }
         img {
-          // margin-top: -2em;
           width: 150px;
+          height: 200px;
           object-fit: cover;
           position: absolute;
-          height: 200px;
-          top: 50%;
-          transform: translateY(-50%);
           opacity: 0;
         }
-        // &:hover {
-        //   img {
-        //     display: block;
-        //   }
-        // }
       }
     }
   }

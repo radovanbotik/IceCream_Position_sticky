@@ -12,8 +12,8 @@ const showFlavours = () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.children[0].style.transform = `translateY(0%)`;
-      } else {
-        entry.target.children[0].style.transform = `translateY(200%)`;
+        observer.unobserve(entry.target);
+        entry.target.style.overflow = "visible";
       }
     });
   };

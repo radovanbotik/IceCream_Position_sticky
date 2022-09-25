@@ -456,32 +456,31 @@ body .flavours {
 }
 body .flavours__title {
   order: 1;
+  text-transform: uppercase;
 }
 body .flavours__list {
   justify-self: end;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1em;
+  gap: 3em;
 }
 body .flavours__list__item {
   padding: 2ex 0;
-  border-bottom: 2px solid black;
+  overflow: hidden;
   position: relative;
 }
 body .flavours__list__item span {
   font-size: 2rem;
   display: inline-block;
-  transform: translateY(100%);
+  transform: translateY(200%);
   transition: transform 500ms ease-in;
 }
 body .flavours__list__item img {
   width: 150px;
+  height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
   position: absolute;
-  height: 200px;
-  top: 50%;
-  transform: translateY(-50%);
   opacity: 0;
 }/*# sourceMappingURL=index.css.map */
