@@ -11,7 +11,6 @@ const showFlavours = () => {
   const callback = entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        console.log(entry.target);
         entry.target.children[0].style.transform = `translateY(0%)`;
       } else {
         entry.target.children[0].style.transform = `translateY(200%)`;

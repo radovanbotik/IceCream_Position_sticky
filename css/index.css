@@ -463,15 +463,15 @@ body .flavours__list {
   flex-direction: column;
   justify-content: space-between;
   gap: 1em;
-  position: relative;
 }
 body .flavours__list__item {
   padding: 2ex 0;
-  overflow: hidden;
+  border-bottom: 2px solid black;
+  position: relative;
 }
 body .flavours__list__item span {
   font-size: 2rem;
-  display: block;
+  display: inline-block;
   transform: translateY(100%);
   transition: transform 500ms ease-in;
 }
@@ -481,8 +481,7 @@ body .flavours__list__item img {
      object-fit: cover;
   position: absolute;
   height: 200px;
-  display: none;
-}
-body .flavours__list__item:hover img {
-  display: block;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
 }/*# sourceMappingURL=index.css.map */

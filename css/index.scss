@@ -669,14 +669,16 @@ body {
       flex-direction: column;
       justify-content: space-between;
       gap: 1em;
-      position: relative;
       &__item {
         padding: useSize(sm) 0;
-        overflow: hidden;
+        // overflow: hidden;
+        border-bottom: 2px solid black;
+        position: relative;
+        // align-self: flex-start;
 
         span {
           font-size: 2rem;
-          display: block;
+          display: inline-block;
           transform: translateY(100%);
           transition: transform 500ms ease-in;
         }
@@ -686,13 +688,15 @@ body {
           object-fit: cover;
           position: absolute;
           height: 200px;
-          display: none;
+          top: 50%;
+          transform: translateY(-50%);
+          opacity: 0;
         }
-        &:hover {
-          img {
-            display: block;
-          }
-        }
+        // &:hover {
+        //   img {
+        //     display: block;
+        //   }
+        // }
       }
     }
   }
