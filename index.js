@@ -4,6 +4,7 @@ import { headerHandler } from "./headerHandler.js";
 import { hoverRotate } from "./hoverRotate.js";
 import { showFlavours } from "./showFlavours.js";
 import { showFlavoursImages } from "./showFlavoursImages.js";
+import { selectedHandler } from "./selectedHandler.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   headerHandler();
@@ -12,4 +13,5 @@ window.addEventListener("DOMContentLoaded", () => {
   observeImages(renderedProducts);
   showFlavours();
   showFlavoursImages();
+  selectedHandler();
 });

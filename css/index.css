@@ -89,13 +89,15 @@ button:hover .doodle-heart {
 body {
   font-family: "Montserrat";
   font-size: 2ex;
+  height: 100%;
   display: grid;
-  grid-template-rows: 8vh -webkit-min-content 100vh -webkit-min-content 1fr 100vh 100vh 120vh;
-  grid-template-rows: 8vh min-content 100vh min-content 1fr 100vh 100vh 120vh;
-  grid-template-columns: 2vw 1fr 4vw;
+  grid-template-rows: 8vh -webkit-min-content 100vh 50vh 1fr 50vh 100vh 40vh 40vh 20vh;
+  grid-template-rows: 8vh min-content 100vh 50vh 1fr 50vh 100vh 40vh 40vh 20vh;
+  grid-template-columns: 4vw 1fr 4vw;
   background-color: #f0f3f3;
 }
 body .announcer {
+  z-index: 2;
   font-family: "Montserrat";
   grid-column: 1/-1;
   background-image: url(../assets/images/patterns/background.jpg);
@@ -113,23 +115,13 @@ body .main-header {
   color: black;
   position: -webkit-sticky;
   position: sticky;
+  background-color: transparent;
   top: 0;
   width: 100%;
   padding: 2ex 0;
   z-index: 10;
   display: flex;
   flex-direction: column;
-}
-body .main-header .announcer {
-  background-color: black;
-  color: white;
-  font-style: italic;
-  font-weight: 300;
-}
-body .main-header .announcer h5 {
-  text-align: center;
-  text-transform: uppercase;
-  padding: 1ex 0;
 }
 body .main-header.logo-sizedown {
   background-color: transparent;
@@ -463,18 +455,22 @@ body .flavours__list {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 3em;
 }
 body .flavours__list__item {
   padding: 2ex 0;
   overflow: hidden;
+  border-bottom: 2px solid black;
   position: relative;
+  padding: 3.5em 0;
 }
 body .flavours__list__item span {
   font-size: 2rem;
   display: inline-block;
-  transform: translateY(200%);
+  transform: translateY(400%);
+  margin: auto 0;
   transition: transform 500ms ease-in;
+  position: absolute;
+  z-index: 2;
 }
 body .flavours__list__item img {
   width: 150px;
@@ -483,4 +479,45 @@ body .flavours__list__item img {
      object-fit: cover;
   position: absolute;
   opacity: 0;
+  transition: all 50ms ease-in;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.232);
+  border-radius: 1ex;
+}
+body .selected {
+  grid-column: 2/3;
+  display: flex;
+}
+body .selected__card {
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+  border: 1px solid black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2ex;
+  text-transform: uppercase;
+}
+body .selected__card:not(:last-child) {
+  border-right: none;
+}
+body .selected__card > * {
+  opacity: 0;
+}
+body .selected__card:hover > * {
+  opacity: 1;
+}
+body .selected__card__title {
+  text-align: center;
+}
+body .selected__card button {
+  display: inline-block;
+  border: 2px solid white;
+  color: white;
+}
+body .selected__card button svg {
+  fill: white;
+  stroke: white;
 }/*# sourceMappingURL=index.css.map */

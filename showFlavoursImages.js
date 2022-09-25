@@ -6,12 +6,18 @@ const showFlavoursImages = () => {
     const image = flavour.querySelector("img");
     const imageWidth = image.getBoundingClientRect().width;
     flavour.addEventListener("mousemove", e => {
-      console.log(e);
       image.style.opacity = 1;
-      image.style.transform = `translateX(${e.clientX - imageWidth}px)`;
+      image.style.transform = `translateX(${
+        e.clientX - imageWidth
+      }px) translateY(${-e.clientY / 2}px) rotate(${
+        e.clientX / 20
+      }deg) scale(1.2)`;
     });
     flavour.addEventListener("mouseleave", e => {
       image.style.opacity = 0;
+      image.style.transform = `translateX(${
+        e.clientX
+      }px) translateY(${-e.clientY}px) rotate(${e.clientX / 20}deg) scale(1)`;
     });
   });
 };
