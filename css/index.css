@@ -91,8 +91,8 @@ body {
   font-size: 2ex;
   height: 100%;
   display: grid;
-  grid-template-rows: 8vh -webkit-min-content 100vh 50vh 1fr 50vh 100vh 40vh 40vh 20vh;
-  grid-template-rows: 8vh min-content 100vh 50vh 1fr 50vh 100vh 40vh 40vh 20vh;
+  grid-template-rows: 8vh -webkit-min-content 100vh 50vh 1fr 50vh 100vh 40vh 40vh 20vh 40vh 60vh;
+  grid-template-rows: 8vh min-content 100vh 50vh 1fr 50vh 100vh 40vh 40vh 20vh 40vh 60vh;
   grid-template-columns: 4vw 1fr 4vw;
   background-color: #f0f3f3;
 }
@@ -520,4 +520,32 @@ body .selected__card button {
 body .selected__card button svg {
   fill: white;
   stroke: white;
+}
+body .newsletter {
+  grid-column: 1/-1;
+  background-color: #ff97b2;
+  display: grid;
+  place-content: center;
+}
+body .newsletter__control {
+  display: flex;
+  align-items: center;
+  gap: 3ex;
+}
+body .newsletter__control__header {
+  flex: 1;
+}
+body .newsletter__control__form {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+body .newsletter__control__form input {
+  height: 100%;
+  padding: 2ex 4ex;
+  border-radius: 4ex;
+}
+body .newsletter__control__form a {
+  position: absolute;
+  right: 10%;
 }/*# sourceMappingURL=index.css.map */

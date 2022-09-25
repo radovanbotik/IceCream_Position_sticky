@@ -134,7 +134,7 @@ body {
   font-size: useSize(sm);
   height: 100%;
   display: grid;
-  grid-template-rows: 8vh min-content 100vh 50vh 1fr 50vh 100vh 40vh 40vh 20vh;
+  grid-template-rows: 8vh min-content 100vh 50vh 1fr 50vh 100vh 40vh 40vh 20vh 40vh 60vh;
   grid-template-columns: 4vw 1fr 4vw;
   background-color: #f0f3f3;
 
@@ -739,5 +739,35 @@ body {
         }
       }
     }
+  }
+  .newsletter {
+    grid-column: 1/-1;
+    background-color: #ff97b2;
+    display: grid;
+    place-content: center;
+    &__control {
+      display: flex;
+      align-items: center;
+      gap: useSize(md);
+      &__header {
+        flex: 1;
+      }
+      &__form {
+        display: flex;
+        align-items: center;
+        position: relative;
+        input {
+          height: 100%;
+          padding: 2ex 4ex;
+          border-radius: 4ex;
+        }
+        a {
+          position: absolute;
+          right: 10%;
+        }
+      }
+    }
+  }
+  .footer {
   }
 }
