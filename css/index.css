@@ -513,7 +513,6 @@ body .selected__card__title {
   text-shadow: 1px 1px 10px black;
 }
 body .selected__card button {
-  display: inline-block;
   border: 2px solid white;
   color: white;
 }

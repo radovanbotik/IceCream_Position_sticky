@@ -454,6 +454,7 @@ body {
           }
           button {
             justify-self: flex-start;
+
             // justify-self: end;
           }
         }
@@ -728,7 +729,6 @@ body {
         text-shadow: 1px 1px 10px black;
       }
       button {
-        display: inline-block;
         border: 2px solid white;
         color: white;
         // box-shadow: 1px 1px 10px black;
